@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# SPDX-FileCopyrightText: 2025 Helmholtz Centre for Geosciences
+#
+# SPDX-License-Identifier: EUPL-1.2
+
 # ==============================================================================
 # Script: setup_conda_env.sh
 # Purpose: Create a conda environment for Sentinel-2 Earth Observation workflow

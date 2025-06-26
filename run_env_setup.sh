@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# SPDX-FileCopyrightText: 2025 Helmholtz Centre for Geosciences
+#
+# SPDX-License-Identifier: EUPL-1.2
+
 # ==============================================================================
 # Script: run_venv_setup.sh
 # Purpose: Call the Python virtual environment setup script with parameters
