@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
+
+# SPDX-FileCopyrightText: 2025 Helmholtz Centre for Geosciences
+#
+# SPDX-License-Identifier: EUPL-1.2
+
 # -*- coding: utf-8 -*-
 
 # ==============================================================================

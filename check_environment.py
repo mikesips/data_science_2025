@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
+
+# SPDX-FileCopyrightText: 2025 Helmholtz Centre for Geosciences
+#
+# SPDX-License-Identifier: EUPL-1.2
+
 # -*- coding: utf-8 -*-
 
 # ==============================================================================
@@ -6,7 +11,6 @@
 # Purpose: Check Python environment and dependencies listed in requirements.yml.
 #          Auto-installs missing core packages ('packaging', 'pyyaml').
 # Author: Mike Sips
-# Date: 2025-06-12
 # ==============================================================================
 
 import sys
