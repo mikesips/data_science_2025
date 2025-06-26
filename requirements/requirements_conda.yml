@@ -1,0 +1,14 @@
+name: data_science_2025
+
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  - dask >= 2024.5
+  - pystac_client >= 0.1
+  - odc_stac >= 0.1
+  - matplotlib >= 3.0
+  - geopandas >= 1.0
+  - rioxarray >= 0.18
+  - shapely >= 2.0
