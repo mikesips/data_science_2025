@@ -66,7 +66,7 @@ If everything is correctly installed, the output should look like:
 
 ```
 
-## 📦 3. Alternativel, use bash script
+## 📦 3. Alternatively, use bash script
 ```sh
 # Clone the repository
 git clone https://github.com/mikesips/data_science_2025.git
