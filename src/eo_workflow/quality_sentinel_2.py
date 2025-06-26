@@ -138,8 +138,7 @@ def assess_sentinel2_quality(
         timestamp_str = timestamp.strftime("%Y-%m-%d" if aggregated else "%Y-%m-%dT%H:%M:%S")
 
         if verbose:
-            print(f"[INFO] {timestamp_str}: total_pixels={total_pixels}; valid_pixels={valid_pixels}; valid ratio={valid_ratio:.2%}")
-            print(f"[INFO] {timestamp_str}: total_pixels={total_pixels}; cloud_pixels={cloud_pixels}; coverage={coverage:.2%}")
+            print(f"[INFO] {timestamp_str}: total_pixels={total_pixels}; valid_pixels={valid_pixels}; valid ratio={valid_ratio:.2%}; cloud_pixels={cloud_pixels}; coverage={coverage:.2%}")
 
         quality_report[scene_id] = {
             "total_pixels": total_pixels,

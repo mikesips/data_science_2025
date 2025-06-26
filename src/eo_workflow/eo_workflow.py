@@ -26,6 +26,7 @@ from eo_workflow import (
     quality_sentinel_2,
     filter_sentinel_2,
     extract_vegetation_ts_sentinel_2,
+    extract_nvdi_ts_sentinel_2,
     visualization_sentinel_2
 )
 

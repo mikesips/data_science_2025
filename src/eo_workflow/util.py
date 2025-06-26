@@ -9,6 +9,42 @@ import xarray as xr
 import numpy as np
 from typing import Tuple
 
+def calculate_nvdi_histogram(
+    ndvi: xr.DataArray,
+    bins: list[float] = [-1.0, 0.0, 0.1, 0.2, 0.3, 0.5, 1.0]
+) -> tuple[np.ndarray, np.ndarray]:
+    """
+    Compute a histogram of NDVI values using defined class bins.
+
+    Parameters
+    ----------
+    ndvi : xr.DataArray
+        NDVI values as a 2D or 3D xarray DataArray.
+
+    bins : list of float, optional
+        Bin edges to classify NDVI values (default: standard interpretation bins).
+
+    Returns
+    -------
+    tuple of (np.ndarray, np.ndarray)
+        - bin_edges: The NDVI bin edges used
+        - frequencies: The number of pixels in each NDVI bin
+    """
+    if not isinstance(ndvi, xr.DataArray):
+        raise TypeError("ndvi must be an xarray.DataArray")
+
+    # Flatten the NDVI values
+    flat_values = ndvi.values.ravel()
+
+    # Remove NaNs before histogram computation
+    valid_values = flat_values[~np.isnan(flat_values)]
+
+    # Compute histogram
+    frequencies, bins = np.histogram(valid_values, bins=bins)
+
+    # Convert to lists
+    return bins.tolist(), frequencies.tolist()
+
 # ------------------------------------------------------------------------------
 # Function: calculate_scl_histogram
 # Purpose : Compute pixel counts for each valid class in a 2D SCL scene
