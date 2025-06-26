@@ -81,4 +81,4 @@ python3 -m venv data_science_2025
 source data_science_2025/bin/activate
 
 # Run Bash Script
-./run_env_setup.sh
+./run_env_setup.sh data_science_2025 requirements/requirements_venv.yml
