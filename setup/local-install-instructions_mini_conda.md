@@ -16,8 +16,11 @@ Open a terminal and run the following commands:
 # Clone this repository
 git clone https://github.com/mikesips/data_science_2025.git
 
-# Create a conda environment using the provided environment.yml
+# Create a conda environment using the provided environment.yml (Linux/macOS)
 conda env create -f requirements/requirements_conda.yml
+
+# On Windows, use:
+conda env create -f requirements\requirements_conda.yml
 
 # go to repo
 cd data_science_2025
@@ -32,7 +35,13 @@ this repository:
 ```sh
 # Activate your conda environment
 conda activate data_science_2025
+
+# Check your conda environment (Linux/macOS)
 python check_env.py ./requirements/requirements_venv.yml
+
+# On Windows, use:
+python check_env.py requirements\requirements_venv.yml
+
 ```
 
 Make sure that there is no `FAIL` in the output when running the `check_env.py`

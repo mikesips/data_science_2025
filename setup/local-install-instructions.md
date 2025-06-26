@@ -6,8 +6,8 @@ This repository uses **Python 3** and common scientific computing libraries such
 - **Option 1**: Conda environment (`miniconda`)
 - **Option 2**: Python virtual environment (`venv`)
 
-## Option 1
+### Option 1: Conda environment 
 See instructions for mini-conda environment [here](./local-install-instructions_mini_conda.md)
 
-## Option 2
+### Option 2: Python virtual environment
 See instructions for python venv [here](./local-install-instructions_python.md)
