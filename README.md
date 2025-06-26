@@ -37,8 +37,7 @@ License compliance is managed using [reuse](https://reuse.software/).
 **Dr. Mike Sips**  
 📧 mike.sips@gfz-potsdam.de  
 
-**Helmholtz Centre Potsdam GFZ**  
-German Research Centre for Geosciences  
+**Helmholtz Centre Geosciences**  
 Section 1.4 Remote Sensing and Geoinformatics  
 Telegrafenberg  
 14473 Potsdam, Germany
