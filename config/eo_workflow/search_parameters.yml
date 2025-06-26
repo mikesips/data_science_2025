@@ -1,0 +1,65 @@
+# ==============================================================================
+# File: search_parameters.yml
+# Purpose: Configuration file for performing a Sentinel-2 STAC search
+#          using pystac-client (e.g., via the EarthSearch API)
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# catalog_url
+# ------------------------------------------------------------------------------
+# Description:
+#   The URL of the STAC API endpoint to search against.
+#   Commonly used: EarthSearch v1 API, which provides access to Sentinel-2
+#   Level-2A imagery hosted on AWS.
+# Notes:
+#   - Ensure the endpoint supports STAC API v1.0 and required query extensions.
+#   - EarthSearch v1 enables advanced filters, including cloud cover constraints.
+# Example:
+#   "https://earth-search.aws.element84.com/v1"
+# ------------------------------------------------------------------------------
+catalog_url: "https://earth-search.aws.element84.com/v1"
+
+# ------------------------------------------------------------------------------
+# bbox
+# ------------------------------------------------------------------------------
+# Description:
+#   Geographic bounding box that defines the area of interest.
+#   Format: [min_lon, min_lat, max_lon, max_lat]
+#   Coordinate reference system: WGS 84 (EPSG:4326).
+# Example:
+#   Covers part of Northern California:
+#   - min_lon: -123.12
+#   - min_lat:  38.52
+#   - max_lon: -122.88
+#   - max_lat:  38.70
+# ------------------------------------------------------------------------------
+bbox:
+  - -123.12
+  - 38.52
+  - -122.88
+  - 38.70
+
+# ------------------------------------------------------------------------------
+# date_range
+# ------------------------------------------------------------------------------
+# Description:
+#   ISO 8601 date interval specifying the search time range.
+#   Format: "YYYY-MM-DD/YYYY-MM-DD"
+#   Start and end dates are inclusive.
+# Example:
+#   Search for data between June 1, 2020 and December 30, 2020:
+#   "2020-06-01/2020-12-30"
+# ------------------------------------------------------------------------------
+date_range: "2020-06-01/2020-12-30"
+
+# ------------------------------------------------------------------------------
+# cloud_cover_threshold
+# ------------------------------------------------------------------------------
+# Description:
+#   Maximum allowable cloud cover in percent for a scene to be included.
+#   Uses the "eo:cloud_cover" STAC query extension.
+#   Must be a number between 0 and 100.
+# Example:
+#   10.0   select scenes with less than 10% cloud cover.
+# ------------------------------------------------------------------------------
+cloud_cover_threshold: 10.0
