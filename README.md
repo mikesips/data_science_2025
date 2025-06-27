@@ -34,7 +34,7 @@ License compliance is managed using [reuse](https://reuse.software/).
 
 ## 📬 Contact
 
-**Dr. Mike Sips**  
+**Mike Sips**  
 📧 mike.sips@gfz-potsdam.de  
 
 **Helmholtz Centre Geosciences**  
