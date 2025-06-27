@@ -1,6 +1,8 @@
 # ==============================================================================
 # File: stac_loader.py
-# Purpose: Sentinel-2 STAC Loader Functions using odc-stac
+# Purpose: Load Sentinel-2 STAC items into xarray datasets using the odc-stac library.
+#          This module provides utilities to configure, filter, and load STAC metadata
+#          and associated image bands (e.g., reflectance, SCL) into analysis-ready formats.
 # Author: Mike Sips
 # ==============================================================================
 

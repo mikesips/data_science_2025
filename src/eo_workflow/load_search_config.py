@@ -1,3 +1,12 @@
+# ==============================================================================
+# File: load_search_config.py
+# Purpose: Load Sentinel-2 STAC search configuration from a YAML file.
+#          This module provides a utility function to validate and return
+#          parameters necessary for querying a STAC API, such as catalog URL,
+#          spatial bounding box, date range, and cloud cover threshold.
+# Author: Mike Sips
+# ==============================================================================
+
 # ------------------------------------------------------------------------------
 # Function: load_search_config
 # Purpose: Load STAC search parameters from a YAML configuration file.

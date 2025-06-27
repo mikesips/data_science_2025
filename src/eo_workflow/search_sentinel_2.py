@@ -1,6 +1,7 @@
 # ==============================================================================
 # File: search_sentinel_2.py
-# Purpose: Sentinel-2 STAC search and metadata display
+# Purpose: Perform Sentinel-2 STAC search queries, validate configuration files,
+#          and display metadata summaries including item properties and asset bands.
 # Author: Mike Sips
 # ==============================================================================
 
