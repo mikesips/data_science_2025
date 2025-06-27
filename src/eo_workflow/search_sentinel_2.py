@@ -1,6 +1,6 @@
 # ==============================================================================
-# File: stac_utils.py
-# Purpose: Utility functions for Sentinel-2 STAC search and metadata display
+# File: search_sentinel_2.py
+# Purpose: Sentinel-2 STAC search and metadata display
 # Author: Mike Sips
 # ==============================================================================
 
@@ -9,9 +9,15 @@ import pystac
 import os
 import yaml
 
+# ------------------------------------------------------------------------------
 # Constants
+# ------------------------------------------------------------------------------
 REQUIRED_KEYS = ["catalog_url", "bbox", "date_range", "cloud_cover_threshold"]
 
+# ------------------------------------------------------------------------------
+# Function: load_stac_search_parameters
+# Purpose : Load STAC search parameters from a YAML config file and validate them
+# ------------------------------------------------------------------------------
 def load_stac_search_parameters(config_filename: str = "search_parameters.yml") -> dict:
     """
     Load Sentinel-2 STAC search parameters from a YAML configuration file.
@@ -63,6 +69,10 @@ def load_stac_search_parameters(config_filename: str = "search_parameters.yml") 
 
     return config
 
+# ------------------------------------------------------------------------------
+# Function: print_stac_search_parameters
+# Purpose : Display the loaded STAC search parameters in readable format
+# ------------------------------------------------------------------------------
 def print_stac_search_parameters(search_config: dict) -> None:
     """
     Print the STAC search parameters in a readable format.
@@ -86,6 +96,10 @@ def print_stac_search_parameters(search_config: dict) -> None:
         print(f"{key.replace('_', ' ').capitalize():<23}: {search_config.get(key, '[Missing]')}")
     print()
 
+# ------------------------------------------------------------------------------
+# Function: print_stac_items
+# Purpose : Print summary metadata and available bands for a list of STAC items
+# ------------------------------------------------------------------------------
 def print_stac_items(items: list, cloud_cover_threshold: float = 1.0) -> None:
     """
     Print summary metadata for a list of STAC Items.
@@ -115,6 +129,10 @@ def print_stac_items(items: list, cloud_cover_threshold: float = 1.0) -> None:
         print(f"Assets:    {list(item.assets.keys())}")
         print("-" * 60)
 
+# ------------------------------------------------------------------------------
+# Function: search_sentinel2
+# Purpose : Perform a STAC query for Sentinel-2 imagery matching specified filters
+# ------------------------------------------------------------------------------
 def search_sentinel2(
     catalog_url: str,
     bbox: list,
@@ -171,3 +189,4 @@ def search_sentinel2(
     print(f"[INFO] Number of matched items: {search.matched()}")
 
     return list(search.items())
+
