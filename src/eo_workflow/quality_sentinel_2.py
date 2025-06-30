@@ -7,10 +7,8 @@
 import xarray as xr
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
 
 from eo_workflow import util
-from eo_workflow import visualization_sentinel_2
 
 # ------------------------------------------------------------------------------
 # Function: plot_scl_histogram

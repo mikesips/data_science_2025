@@ -26,8 +26,7 @@ from eo_workflow import (
     quality_sentinel_2,
     filter_sentinel_2,
     extract_vegetation_ts_sentinel_2,
-    extract_nvdi_ts_sentinel_2,
-    visualization_sentinel_2
+    visualize_vegetation_ts_sentinel_2
 )
 
 # ------------------------------------------------------------------------------
@@ -48,6 +47,7 @@ class EOWorkflow:
         self.search_config = None
         self.load_config = None
         self.filter_config = None
+        self.visualize_vegetation_ts_config = None
 
     def perform(self):
         """
@@ -117,6 +117,11 @@ class EOWorkflow:
         )
 
         # Step 8: Visualize results
-        visualization_sentinel_2.plot_vegetation_time_series(
-            table=vegetation_time_series
+        self.visualize_vegetation_ts_config = visualize_vegetation_ts_sentinel_2.load_visualize_vegetation_ts_parameters(
+            os.path.join(self.config_dir, "visualize_vegetation_ts_parameters.yml")
+        )
+
+        visualize_visualization_sentinel_2.plot_vegetation_time_series(
+            table=vegetation_time_series,
+            save_dir = self.visualize_vegetation_ts_config["vegetation_ts_save_dir"]
         )

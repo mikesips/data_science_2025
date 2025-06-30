@@ -190,4 +190,3 @@ def search_sentinel2(
     print(f"[INFO] Number of matched items: {search.matched()}")
 
     return list(search.items())
-

@@ -8,6 +8,7 @@
 
 import os
 import yaml
+import numpy as np
 import xarray as xr
 import pystac
 from odc.stac import load
@@ -159,7 +160,8 @@ def load_sentinel2_xarray(
         bands=band_keys,
         resolution=resolution,
         groupby="solar_day" if aggregation else None,
-        chunks={}  # Enable Dask lazy loading
+        chunks={},  # Enable Dask lazy loading
+        fuse_func=np.nanmean # average overlapping pixel
     )
     print("[INFO] Loading Successful.")
 
