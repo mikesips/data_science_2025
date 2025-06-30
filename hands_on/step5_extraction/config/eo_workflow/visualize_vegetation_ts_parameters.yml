@@ -1,0 +1,4 @@
+# visualize_parameters.yml
+# Configuration file for saving vegetation time series plots
+
+vegetation_ts_save_dir: "./outputs/vegetation_ts"

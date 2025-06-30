@@ -1,0 +1,52 @@
+# ==============================================================================
+# File: load_parameters.yml
+# Purpose: Configuration parameters for loading Sentinel-2 STAC items
+#          into an xarray.Dataset using odc.stac.load
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# bands
+# ------------------------------------------------------------------------------
+# Description: List of spectral bands to load from Sentinel-2 items.
+# Examples:
+#   - red  -> Band 4 (visible red)
+#   - nir  -> Band 8 (near-infrared)
+#   - scl  -> Scene Classification Layer (cloud, vegetation, etc.)
+# The names must match STAC asset keys or aliases recognized by odc-stac.
+# bands : "red", "green", "blue", "nir", "swir16", "swir22", "wvp", "scl", "rededge1", "rededge2", "rededge3", "nir08"
+# ------------------------------------------------------------------------------
+bands:
+  - red
+  - nir
+  - scl
+
+# ------------------------------------------------------------------------------
+# resolution
+# ------------------------------------------------------------------------------
+# Description: Spatial resolution in meters for resampling data.
+# Sentinel-2 supports 10m, 20m, and 60m bands. Choose a resolution
+# compatible with the bands you are loading (e.g., red and nir → 10m).
+# ------------------------------------------------------------------------------
+resolution: 60
+
+# ------------------------------------------------------------------------------
+# aggregation
+# ------------------------------------------------------------------------------
+# Description: Whether to group images by solar day (i.e., collapse multiple
+# acquisitions into one per day using median compositing).
+# - true  → use groupby="solar_day"
+# - false → disable grouping (load all individual timestamps)
+# ------------------------------------------------------------------------------
+aggregation: True
+
+# ------------------------------------------------------------------------------
+# chunks
+# ------------------------------------------------------------------------------
+# Description: Dask chunking for lazy, out-of-core loading.
+# Leave empty for automatic chunking. Can be overridden with:
+#   chunks:
+#     x: 1024
+#     y: 1024
+#   to explicitly control memory usage and parallelism.
+# ------------------------------------------------------------------------------
+chunks: {}

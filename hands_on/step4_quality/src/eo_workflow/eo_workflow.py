@@ -21,7 +21,10 @@ import os
 from eo_workflow import (
     search_sentinel_2,
     load_sentinel_2,
-    visualize_scl_sentinel_2
+    clip_sentinel_2,
+    quality_sentinel_2,
+    filter_sentinel_2,
+    util
 )
 
 # ------------------------------------------------------------------------------
@@ -78,11 +81,26 @@ class EOWorkflow:
             aggregation=self.load_config["aggregation"]
         )
 
-        # visualize Sentinel-2 SCL Layer
-        self.visualize_scl_config = visualize_scl_sentinel_2.load_visualize_scl_parameters (
-            os.path.join(self.config_dir, "visualize_scl_parameters.yml")
+        # Step 4: Clip to bounding box
+        clipped_data_set = clip_sentinel_2.clip_dataset_to_bbox(
+            dataset=data_set,
+            bbox=self.search_config["bbox"]
         )
-        visualize_scl_sentinel_2.plot_all_scl_scenes(
-            dataset = data_set,
-            save_dir = self.visualize_scl_config["orignial_scl_save_dir"]
+
+        # Step 5: Assess quality
+        quality_report = quality_sentinel_2.assess_sentinel2_quality(clipped_data_set)
+
+        # Step 6: Filter by quality
+        self.filter_config = filter_sentinel_2.load_filter_parameters(
+            os.path.join(self.config_dir, "filter_parameters.yml")
         )
+
+        filtered_data_set = filter_sentinel_2.filter_scenes_by_validity_ratio(
+            data_set=clipped_data_set,
+            quality_report=quality_report,
+            validity_threshold=self.filter_config["validity_threshold"],
+            coverage_threshold=self.filter_config["coverage_threshold"],
+            aggregation=self.load_config["aggregation"]
+        )
+
+

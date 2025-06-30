@@ -21,6 +21,7 @@ import os
 from eo_workflow import (
     search_sentinel_2,
     load_sentinel_2,
+    clip_sentinel_2,
     visualize_scl_sentinel_2
 )
 
@@ -78,11 +79,19 @@ class EOWorkflow:
             aggregation=self.load_config["aggregation"]
         )
 
-        # visualize Sentinel-2 SCL Layer
+        # Step 4: Clip to bounding box
+        clipped_data_set = clip_sentinel_2.clip_dataset_to_bbox(
+            dataset=data_set,
+            bbox=self.search_config["bbox"]
+        )
+
+        # visualize clipped Sentinel-2 SCL Layer
         self.visualize_scl_config = visualize_scl_sentinel_2.load_visualize_scl_parameters (
             os.path.join(self.config_dir, "visualize_scl_parameters.yml")
         )
         visualize_scl_sentinel_2.plot_all_scl_scenes(
-            dataset = data_set,
-            save_dir = self.visualize_scl_config["orignial_scl_save_dir"]
+            dataset = clipped_data_set,
+            save_dir = self.visualize_scl_config["clipped_scl_save_dir"]
         )
+
+

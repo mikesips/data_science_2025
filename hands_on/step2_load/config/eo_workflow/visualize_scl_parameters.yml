@@ -1,0 +1,5 @@
+# visualize_parameters.yml
+# Configuration file for saving SCL plots
+
+orignial_scl_save_dir: "./outputs/scl/original"
+clipped_scl_save_dir: "./outputs/scl/clipped"

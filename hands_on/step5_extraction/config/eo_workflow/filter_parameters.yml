@@ -1,0 +1,23 @@
+# ==============================================================================
+# File: filter_parameters.yml
+# Purpose: Configuration file for filtering Sentinel-2 scenes
+#          based on pixel validity and spatial coverage
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# validity_threshold
+# ------------------------------------------------------------------------------
+# Description:
+#   Minimum valid pixel ratio required to keep a scene.
+#   Range: 0.0 to 1.0
+# ------------------------------------------------------------------------------
+validity_threshold: 0.6
+
+# ------------------------------------------------------------------------------
+# coverage_threshold
+# ------------------------------------------------------------------------------
+# Description:
+#   Minimum spatial coverage ratio of vegetation pixels required to keep a scene.
+#   Range: 0.0 to 1.0
+# ------------------------------------------------------------------------------
+coverage_threshold: 0.8
