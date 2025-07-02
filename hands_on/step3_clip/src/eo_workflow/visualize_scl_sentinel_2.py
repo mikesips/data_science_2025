@@ -7,6 +7,7 @@
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 import matplotlib.colors as mcolors
+from typing import Union
 import xarray as xr
 import numpy as np
 import pandas as pd
@@ -73,7 +74,7 @@ def plot_scl_layer(
     cmap: str = "tab20",
     figsize: tuple = (10, 8),
     show_axis: bool = False,
-    save_path: str | None = None
+    save_path: Union[str, None] = None
 ) -> None:
     """
     Plot a single SCL layer using predefined Sentinel-2 class labels and colors.
@@ -160,7 +161,7 @@ def plot_all_scl_scenes(
     scl_band: str = "scl",
     cmap: str = "tab20",
     figsize: tuple = (10, 8),
-    save_dir: str | None = None
+    save_dir: Union[str, None] = None
 ) -> None:
     """
     Plot all scenes of the SCL band over time from a multi-temporal dataset.
