@@ -9,7 +9,16 @@
 
 ---
 
-## 📦 2. Clone the Repository and Create the Environment
+## 📦 2. Download Git for Windows
+> ⚠️ Skip this step if you already have `git` installed.
+
+    Go to the official Git website:
+    👉 https://git-scm.com/download/win
+
+    The download will begin automatically for the 64-bit Windows installer (e.g., Git-x.y.z-64-bit.exe).
+---
+
+## 📦 3. Clone the Repository and Create the Environment
 
 Open a terminal and run the following commands:
 ```sh
@@ -26,7 +35,7 @@ conda env create -f requirements\requirements_conda.yml
 cd data_science_2025
 ```
 
-## 📦 3. Check your install
+## 📦 4. Check your install
 
 To make sure you have all the necessary packages installed, we **strongly
 recommend** you to execute the `check_env.py` script located at the root of

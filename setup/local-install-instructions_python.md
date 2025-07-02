@@ -3,8 +3,16 @@
 This guide will help you set up a Python virtual environment and install the required dependencies for the `data_science_2025` project.
 
 ---
+## 📦 1. Download Git for Windows
+> ⚠️ Skip this step if you already have `git` installed.
 
-## 📦 1. Clone the Repository and Set Up the Environment
+    Go to the official Git website:
+    👉 https://git-scm.com/download/win
+
+    The download will begin automatically for the 64-bit Windows installer (e.g., Git-x.y.z-64-bit.exe).
+---
+
+## 📦 2. Clone the Repository and Set Up the Environment
 
 Open a terminal and run the following commands:
 
@@ -35,7 +43,7 @@ python -m pip install -r requirements\requirements_venv.txt
 
 ```
 
-## 📦 2. Check your install and environment
+## 📦 3. Check your install and environment
 
 To confirm that your environment is correctly configured, run the check_env.py script:
 ```sh
@@ -66,7 +74,7 @@ If everything is correctly installed, the output should look like:
 
 ```
 
-## 📦 3. Alternatively, use bash script
+## 📦 4. Alternatively, use bash script
 ```sh
 # Clone the repository
 git clone https://github.com/mikesips/data_science_2025.git
