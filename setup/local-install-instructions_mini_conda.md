@@ -4,8 +4,8 @@
 
 > ⚠️ Skip this step if you already have `conda` installed.
 
-1. Download the appropriate [Miniconda installer](https://docs.conda.io/en/latest/miniconda.html) for your operating system (Windows, macOS, or Linux).
-2. Follow the [installation instructions](https://conda.io/projects/conda/en/latest/user-guide/install/index.html) for your platform.
+   👉 1. Download the appropriate [Miniconda installer](https://docs.conda.io/en/latest/miniconda.html) for your operating system (Windows, macOS, or Linux).
+   👉 2. Follow the [installation instructions](https://conda.io/projects/conda/en/latest/user-guide/install/index.html) for your platform.
 
 ---
 
