@@ -19,14 +19,14 @@ import sys
 import os
 
 from eo_workflow import (
-    util,
     search_sentinel_2,
     load_sentinel_2,
     clip_sentinel_2,
     quality_sentinel_2,
     filter_sentinel_2,
     extract_vegetation_ts_sentinel_2,
-    visualize_vegetation_ts_sentinel_2
+    visualize_vegetation_ts_sentinel_2,
+    util
 )
 
 # ------------------------------------------------------------------------------
@@ -53,13 +53,6 @@ class EOWorkflow:
         """
         Execute the complete Sentinel-2 Earth Observation processing workflow:
         1. Load search configuration
-        2. Perform STAC search
-        3. Load Sentinel-2 bands into xarray.Dataset
-        4. Clip data to bounding box
-        5. Assess scene quality
-        6. Filter scenes by quality metrics
-        7. Extract vegetation time series
-        8. Visualize results
         """
         # Step 1: Load search parameters
         self.search_config = search_sentinel_2.load_stac_search_parameters(
@@ -74,6 +67,8 @@ class EOWorkflow:
             date_range=self.search_config["date_range"],
             cloud_cover_threshold=self.search_config["cloud_cover_threshold"]
         )
+
+        search_sentinel_2.print_stac_items(items)
 
         # Step 3: Load STAC items
         self.load_config = load_sentinel_2.load_stac_load_parameters(
@@ -121,7 +116,10 @@ class EOWorkflow:
             os.path.join(self.config_dir, "visualize_vegetation_ts_parameters.yml")
         )
 
-        visualize_visualization_sentinel_2.plot_vegetation_time_series(
+        visualize_vegetation_ts_sentinel_2.plot_vegetation_time_series(
             table=vegetation_time_series,
             save_dir = self.visualize_vegetation_ts_config["vegetation_ts_save_dir"]
         )
+
+
+
