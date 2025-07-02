@@ -4,11 +4,10 @@
 # Author  : Mike Sips
 # ==============================================================================
 
-import os
-import yaml
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 import matplotlib.colors as mcolors
+from typing import Union
 import xarray as xr
 import numpy as np
 import pandas as pd
@@ -16,7 +15,12 @@ import pandas as pd
 # ==============================================================================
 # Function: load_visualize_scl_parameters
 # Purpose : Load configuration parameters for visualizing SCL layer plots
+# Author  : Mike Sips
 # ==============================================================================
+
+import os
+import yaml
+
 def load_visualize_scl_parameters(config_path: str = "scl_plot_config.yml") -> dict:
     """
     Load configuration for SCL plot visualization from a YAML file.
@@ -50,10 +54,12 @@ def load_visualize_scl_parameters(config_path: str = "scl_plot_config.yml") -> d
     if not isinstance(config, dict):
         raise ValueError("YAML content must be a dictionary")
 
-    required_keys = ["original_scl_save_dir", "clipped_scl_save_dir", "vegetation_ts_save_path"]
-    for key in required_keys:
-        if key not in config or not isinstance(config[key], str):
-            raise ValueError(f"Missing or invalid value for key: '{key}'")
+    if "orignial_scl_save_dir" not in config or not isinstance(config["orignial_scl_save_dir"], str):
+        raise ValueError("Missing or invalid 'save_dir' in configuration")
+
+    if "clipped_scl_save_dir" not in config or not isinstance(config["clipped_scl_save_dir"], str):
+        raise ValueError("Missing or invalid 'save_dir' in configuration")
+
 
     return config
 
@@ -68,7 +74,7 @@ def plot_scl_layer(
     cmap: str = "tab20",
     figsize: tuple = (10, 8),
     show_axis: bool = False,
-    save_path: str | None = None
+    save_path: Union[str, None] = None
 ) -> None:
     """
     Plot a single SCL layer using predefined Sentinel-2 class labels and colors.
@@ -155,7 +161,7 @@ def plot_all_scl_scenes(
     scl_band: str = "scl",
     cmap: str = "tab20",
     figsize: tuple = (10, 8),
-    save_dir: str | None = None
+    save_dir: Union[str, None] = None
 ) -> None:
     """
     Plot all scenes of the SCL band over time from a multi-temporal dataset.
