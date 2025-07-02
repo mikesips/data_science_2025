@@ -9,7 +9,6 @@
 # Purpose: Create a conda environment for Sentinel-2 Earth Observation workflow
 # Usage: ./setup_conda_env.sh environment.yml sentinel2_env
 # Author: Mike Sips
-# Date: 2025-06-16
 # ==============================================================================
 
 # ------------------------------------------------------------------------------
