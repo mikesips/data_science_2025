@@ -3,21 +3,22 @@
 ## 📦 1. Install Miniconda (Optional)
 
 > ⚠️ Skip this step if you already have `conda` installed.
-
+```sh
    👉 1. Download the appropriate [Miniconda installer](https://docs.conda.io/en/latest/miniconda.html) for your operating system (Windows, macOS, or Linux).
-   
-   👉 2. Follow the [installation instructions](https://conda.io/projects/conda/en/latest/user-guide/install/index.html) for your platform.
 
+   👉 2. Follow the [installation instructions](https://conda.io/projects/conda/en/latest/user-guide/install/index.html) for your platform.
+```
 ---
 
 ## 📦 2. Download Git for Windows
 > ⚠️ Skip this step if you already have `git` installed.
-
+```sh
     Go to the official Git website:
     👉 https://git-scm.com/download/win
 
     The download will begin automatically for the 64-bit Windows installer (e.g., Git-x.y.z-64-bit.exe).
 ---
+```
 
 ## 📦 3. Clone the Repository and Create the Environment
 
