@@ -44,7 +44,7 @@ aggregation: True
 # ------------------------------------------------------------------------------
 # Description: Dask chunking for lazy, out-of-core loading.
 # Leave empty for automatic chunking. Can be overridden with:
-#   chunks:
+#  chunks:
 #     x: 1024
 #     y: 1024
 #   to explicitly control memory usage and parallelism.
