@@ -17,6 +17,8 @@ The guide walks you through:
 
 Today, you will extend the EOWorkflow prototype [hand-on for today](./hands-on.md). 
 
+---
+
 ## 📄 License
 
 **EUROPEAN UNION PUBLIC LICENCE v. 1.2**  
