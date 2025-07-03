@@ -13,6 +13,10 @@ The guide walks you through:
 
 ---
 
+## 🧪 2025-07-03: Your Hands-On Today
+
+Today, you will extend the EOWorkflow prototype [hand-on for today](./hands-on.md). 
+
 ## 📄 License
 
 **EUROPEAN UNION PUBLIC LICENCE v. 1.2**  
